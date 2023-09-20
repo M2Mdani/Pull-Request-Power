@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="https://www.numerexsolutions.com/webservices" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="https://www.numerexsolutions.com/webservices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://www.numerexsolutions.com/webservices">
+      <s:element name="ValidateSystemUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateSystemUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidateSystemUserResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProvisionUnit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IMSI" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SIMSerialNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UnitType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirmwareVersion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BoardSerialNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IMEI" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Provisioned" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProvisionOperator" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProvisionUnitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProvisionUnitResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DealerUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DealerPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Province" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PriBusContact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BusContactPhone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BusContactEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InvoiceEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateAccountResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnAccountInfoById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iAccountId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnAccountInfoByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnAccountInfoByIdResult" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ReturnAccountInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnAccountInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnAccountInfoResult" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActivateUnit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iAccountId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="IMEI" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BillByUplink" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActivateUnitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ActivateUnitResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReActivateUnit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iAccountId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="IMEI" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BillByUplink" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReActivateUnitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ReActivateUnitResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeactivateUnit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iAccountId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="IMEI" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeactivateUnitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeactivateUnitResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeServicePlanForBilling">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iAccountId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="IMEI" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BillByUplink" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsFirstTimeActivation" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeServicePlanForBillingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ChangeServicePlanForBillingResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsUserNameUnique">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DealerUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsUserNameUniqueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsUserNameUniqueResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnUserInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DealerUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DealerPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnUserInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnUserInfoResult" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUnitToM2MDice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="listString" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUnitToM2MDiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddUnitToM2MDiceResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NotifyDialersViaM2M">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dfLogID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="MSISDN" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NotificationType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CSPhoneNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CSAccountNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CSEventCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TxRetry" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NotifyDialersViaM2MResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NotifyDialersViaM2MResult" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnDialResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DialLogID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnDialResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnDialResultResult" type="tns:ArrayOfDialLog" />
+            <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDialLog">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DialLog" nillable="true" type="tns:DialLog" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DialLog">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="dfDialLogID" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="dfLogID" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="dtDialStart" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="sNotifyType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="tiTxRetry" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="sPriCSPhoneNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sCSAccountNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sCSEventCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iRetryNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="sResult" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sErrorDetail" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dtDialEnd" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ValidateSystemUserSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateSystemUser" />
+  </wsdl:message>
+  <wsdl:message name="ValidateSystemUserSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateSystemUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProvisionUnitSoapIn">
+    <wsdl:part name="parameters" element="tns:ProvisionUnit" />
+  </wsdl:message>
+  <wsdl:message name="ProvisionUnitSoapOut">
+    <wsdl:part name="parameters" element="tns:ProvisionUnitResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateAccount" />
+  </wsdl:message>
+  <wsdl:message name="CreateAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnAccountInfoByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnAccountInfoById" />
+  </wsdl:message>
+  <wsdl:message name="ReturnAccountInfoByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnAccountInfoByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnAccountInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnAccountInfo" />
+  </wsdl:message>
+  <wsdl:message name="ReturnAccountInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnAccountInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActivateUnitSoapIn">
+    <wsdl:part name="parameters" element="tns:ActivateUnit" />
+  </wsdl:message>
+  <wsdl:message name="ActivateUnitSoapOut">
+    <wsdl:part name="parameters" element="tns:ActivateUnitResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReActivateUnitSoapIn">
+    <wsdl:part name="parameters" element="tns:ReActivateUnit" />
+  </wsdl:message>
+  <wsdl:message name="ReActivateUnitSoapOut">
+    <wsdl:part name="parameters" element="tns:ReActivateUnitResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeactivateUnitSoapIn">
+    <wsdl:part name="parameters" element="tns:DeactivateUnit" />
+  </wsdl:message>
+  <wsdl:message name="DeactivateUnitSoapOut">
+    <wsdl:part name="parameters" element="tns:DeactivateUnitResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeServicePlanForBillingSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeServicePlanForBilling" />
+  </wsdl:message>
+  <wsdl:message name="ChangeServicePlanForBillingSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeServicePlanForBillingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsUserNameUniqueSoapIn">
+    <wsdl:part name="parameters" element="tns:IsUserNameUnique" />
+  </wsdl:message>
+  <wsdl:message name="IsUserNameUniqueSoapOut">
+    <wsdl:part name="parameters" element="tns:IsUserNameUniqueResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnUserInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="ReturnUserInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUnitToM2MDiceSoapIn">
+    <wsdl:part name="parameters" element="tns:AddUnitToM2MDice" />
+  </wsdl:message>
+  <wsdl:message name="AddUnitToM2MDiceSoapOut">
+    <wsdl:part name="parameters" element="tns:AddUnitToM2MDiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="NotifyDialersViaM2MSoapIn">
+    <wsdl:part name="parameters" element="tns:NotifyDialersViaM2M" />
+  </wsdl:message>
+  <wsdl:message name="NotifyDialersViaM2MSoapOut">
+    <wsdl:part name="parameters" element="tns:NotifyDialersViaM2MResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnDialResultSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnDialResult" />
+  </wsdl:message>
+  <wsdl:message name="ReturnDialResultSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnDialResultResponse" />
+  </wsdl:message>
+  <wsdl:portType name="M2MServiceSoap">
+    <wsdl:operation name="ValidateSystemUser">
+      <wsdl:input message="tns:ValidateSystemUserSoapIn" />
+      <wsdl:output message="tns:ValidateSystemUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionUnit">
+      <wsdl:input message="tns:ProvisionUnitSoapIn" />
+      <wsdl:output message="tns:ProvisionUnitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAccount">
+      <wsdl:input message="tns:CreateAccountSoapIn" />
+      <wsdl:output message="tns:CreateAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnAccountInfoById">
+      <wsdl:input message="tns:ReturnAccountInfoByIdSoapIn" />
+      <wsdl:output message="tns:ReturnAccountInfoByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnAccountInfo">
+      <wsdl:input message="tns:ReturnAccountInfoSoapIn" />
+      <wsdl:output message="tns:ReturnAccountInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivateUnit">
+      <wsdl:input message="tns:ActivateUnitSoapIn" />
+      <wsdl:output message="tns:ActivateUnitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReActivateUnit">
+      <wsdl:input message="tns:ReActivateUnitSoapIn" />
+      <wsdl:output message="tns:ReActivateUnitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeactivateUnit">
+      <wsdl:input message="tns:DeactivateUnitSoapIn" />
+      <wsdl:output message="tns:DeactivateUnitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeServicePlanForBilling">
+      <wsdl:input message="tns:ChangeServicePlanForBillingSoapIn" />
+      <wsdl:output message="tns:ChangeServicePlanForBillingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUserNameUnique">
+      <wsdl:input message="tns:IsUserNameUniqueSoapIn" />
+      <wsdl:output message="tns:IsUserNameUniqueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnUserInfo">
+      <wsdl:input message="tns:ReturnUserInfoSoapIn" />
+      <wsdl:output message="tns:ReturnUserInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUnitToM2MDice">
+      <wsdl:input message="tns:AddUnitToM2MDiceSoapIn" />
+      <wsdl:output message="tns:AddUnitToM2MDiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyDialersViaM2M">
+      <wsdl:input message="tns:NotifyDialersViaM2MSoapIn" />
+      <wsdl:output message="tns:NotifyDialersViaM2MSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnDialResult">
+      <wsdl:input message="tns:ReturnDialResultSoapIn" />
+      <wsdl:output message="tns:ReturnDialResultSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="M2MServiceSoap" type="tns:M2MServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ValidateSystemUser">
+      <soap:operation soapAction="https://www.numerexsolutions.com/webservices/ValidateSystemUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionUnit">
+      <soap:operation soapAction="https://www.numerexsolutions.com/webservices/ProvisionUnit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAccount">
+      <soap:operation soapAction="https://www.numerexsolutions.com/webservices/CreateAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnAccountInfoById">
+      <soap:operation soapAction="https://www.numerexsolutions.com/webservices/ReturnAccountInfoById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnAccountInfo">
+      <soap:operation soapAction="https://www.numerexsolutions.com/webservices/ReturnAccountInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateUnit">
+      <soap:operation soapAction="https://www.numerexsolutions.com/webservices/ActivateUnit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReActivateUnit">
+      <soap:operation soapAction="https://www.numerexsolutions.com/webservices/ReActivateUnit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeactivateUnit">
+      <soap:operation soapAction="https://www.numerexsolutions.com/webservices/DeactivateUnit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeServicePlanForBilling">
+      <soap:operation soapAction="https://www.numerexsolutions.com/webservices/ChangeServicePlanForBilling" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserNameUnique">
+      <soap:operation soapAction="https://www.numerexsolutions.com/webservices/IsUserNameUnique" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnUserInfo">
+      <soap:operation soapAction="https://www.numerexsolutions.com/webservices/ReturnUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUnitToM2MDice">
+      <soap:operation soapAction="https://www.numerexsolutions.com/webservices/AddUnitToM2MDice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyDialersViaM2M">
+      <soap:operation soapAction="https://www.numerexsolutions.com/webservices/NotifyDialersViaM2M" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnDialResult">
+      <soap:operation soapAction="https://www.numerexsolutions.com/webservices/ReturnDialResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="M2MServiceSoap12" type="tns:M2MServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ValidateSystemUser">
+      <soap12:operation soapAction="https://www.numerexsolutions.com/webservices/ValidateSystemUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionUnit">
+      <soap12:operation soapAction="https://www.numerexsolutions.com/webservices/ProvisionUnit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAccount">
+      <soap12:operation soapAction="https://www.numerexsolutions.com/webservices/CreateAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnAccountInfoById">
+      <soap12:operation soapAction="https://www.numerexsolutions.com/webservices/ReturnAccountInfoById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnAccountInfo">
+      <soap12:operation soapAction="https://www.numerexsolutions.com/webservices/ReturnAccountInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateUnit">
+      <soap12:operation soapAction="https://www.numerexsolutions.com/webservices/ActivateUnit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReActivateUnit">
+      <soap12:operation soapAction="https://www.numerexsolutions.com/webservices/ReActivateUnit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeactivateUnit">
+      <soap12:operation soapAction="https://www.numerexsolutions.com/webservices/DeactivateUnit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeServicePlanForBilling">
+      <soap12:operation soapAction="https://www.numerexsolutions.com/webservices/ChangeServicePlanForBilling" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserNameUnique">
+      <soap12:operation soapAction="https://www.numerexsolutions.com/webservices/IsUserNameUnique" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnUserInfo">
+      <soap12:operation soapAction="https://www.numerexsolutions.com/webservices/ReturnUserInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUnitToM2MDice">
+      <soap12:operation soapAction="https://www.numerexsolutions.com/webservices/AddUnitToM2MDice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyDialersViaM2M">
+      <soap12:operation soapAction="https://www.numerexsolutions.com/webservices/NotifyDialersViaM2M" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnDialResult">
+      <soap12:operation soapAction="https://www.numerexsolutions.com/webservices/ReturnDialResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="M2MService">
+    <wsdl:port name="M2MServiceSoap" binding="tns:M2MServiceSoap">
+      <soap:address location="http://admin.uplink.com/webservices/m2mService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="M2MServiceSoap12" binding="tns:M2MServiceSoap12">
+      <soap12:address location="http://admin.uplink.com/webservices/m2mService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
