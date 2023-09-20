@@ -12,6 +12,8 @@ namespace ConsumerConsoleApp
     {
         static void Main(string[] args)
         {
+            // We call other library(.dll) to call the WCF
+            // We need a App.config in the ConsoleApplication else it wont run
             Proxy pr = new Proxy();
             pr.Write();
         }

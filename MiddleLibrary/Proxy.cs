@@ -36,7 +36,7 @@ namespace MiddleLibrary
             }
             catch (Exception e)
             {
-                Console.Write("1");
+                Console.Write("First request Failed!");
                 return false;
             }
             NotifyDialersViaM2MResponseBody notifyDialersViaM2MResponseBody = null;
@@ -46,12 +46,13 @@ namespace MiddleLibrary
             }
             catch (Exception e)
             {
-                Console.Write("2");
+                Console.Write("Second request Failed!");
                 return false;
             }
 
+            Console.Write("3");
             while (true) {
-                Console.Write("3");
+                
                 return true; }
             }
     }
