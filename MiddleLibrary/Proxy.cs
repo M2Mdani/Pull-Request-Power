@@ -15,9 +15,9 @@ namespace MiddleLibrary
             {
                 UserName = "m2mservice",
                 Password = "F33M!1dk",
-                dfLogID = 12345678,
+                dfLogID = 48600,
                 MSISDN = "0003061668",
-                NotificationType = 5004,
+                NotificationType = 5003,
                 CSPhoneNo = "8552209737",
                 CSAccountNo = "0006",
                 CSEventCode = "140101002",
@@ -30,7 +30,7 @@ namespace MiddleLibrary
                 {
                     var a = m2mUplink.NotifyDialersViaM2MAsync(ndr.UserName, ndr.Password, ndr.dfLogID, ndr.MSISDN,
                             ndr.NotificationType, ndr.CSPhoneNo, ndr.CSAccountNo, ndr.CSEventCode,
-                            ndr.TxRetry, ndr.ErrorCode, ndr.ErrorText).Result;
+                            8, ndr.ErrorCode, ndr.ErrorText).Result;
                     ;
                 }
             }
