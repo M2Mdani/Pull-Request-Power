@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="UplinkClient.cs" />
     <Compile Include="Connected Services\UplinkSoapCommunication\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -107,6 +112,10 @@
     </None>
     <None Include="Connected Services\UplinkSoapCommunication\UplinkSoap.UplinkSoapCommunication.ValidateSystemUserResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
