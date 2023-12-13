@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UplinkSoap.Properties;
 using UplinkSoap.UplinkSoapCommunication;
 
 namespace UplinkSoap
@@ -12,6 +14,7 @@ namespace UplinkSoap
         public static async Task<NotifyDialersViaM2MResponseBody> NotifyDialersViaM2M(NotifyDialersViaM2MRequestBody ndr)
         {
        
+            // Not sure if it is need to create an instance of this every time
             using (var m2mUplink = new M2MServiceSoapClient("M2MServiceSoap"))
             {
                 var a = await m2mUplink.NotifyDialersViaM2MAsync(ndr.UserName, ndr.Password, ndr.dfLogID, ndr.MSISDN,
@@ -25,7 +28,7 @@ namespace UplinkSoap
             string UserName, string Password,
             long DialLogID, int ErrorCode, string ErrorText)
         {
-
+            string s = Settings.Default.MySetting1;
             using (M2MServiceSoapClient m2mUplink = new M2MServiceSoapClient("M2MServiceSoap"))
             {
                 return await m2mUplink.ReturnDialResultAsync(UserName, Password, DialLogID, ErrorCode, ErrorText);
