@@ -14,6 +14,7 @@ namespace UplinkSoap
         public static async Task<NotifyDialersViaM2MResponseBody> NotifyDialersViaM2M(NotifyDialersViaM2MRequestBody ndr)
         {
        
+            // Not sure if it is need to create an instance of this every time
             using (var m2mUplink = new M2MServiceSoapClient("M2MServiceSoap"))
             {
                 var a = await m2mUplink.NotifyDialersViaM2MAsync(ndr.UserName, ndr.Password, ndr.dfLogID, ndr.MSISDN,
